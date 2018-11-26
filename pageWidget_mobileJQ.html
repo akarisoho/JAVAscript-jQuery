@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pageWidget</title>
+    <style>
+    ul{list-style: none;}
+    a{text-decoration: none;}
+    nav{ position: fixed; right:10px; top:50%; transform: translateY(-50%); z-index: 999;}
+    nav a{ display: block; padding:2em;}
+    div{ width: 100%; height: 100%;}
+    #page1{ background: plum;}
+    #page2{ background: pink;}
+    #page3{ background: oldlace;}
+    #page4{ background-color:aquamarine;}
+    #page5{ background-color: azure}
+    </style>
+    <!--jQueryMobilePlugin-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.css"/>
+    <!--jQueryMobilePlugin-->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.js"></script>
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#page1" data-transition="flow">MAIN</a></li>
+            <li><a href="#page2" data-transition="flow">SECTION1</a></li>
+            <li><a href="#page3" data-transition="flow">SECTION2</a></li>
+            <li><a href="#page4" data-transition="flow">SECTION3</a></li>
+            <li><a href="#page5" data-transition="flow">SECTION4</a></li>
+            <!-- fade, pop, flip, turn, flow, slidefade, slide, slideup, slidedown, none  data-direction="reverse" -->
+        </ul>
+    </nav>
+    <div data-role="page" id="page1">
+        <h1>MAIN</h1>
+        1페이지입니다.
+    </div>
+    <div data-role="page" id="page2">
+        <h1>SECTION</h1>
+        2페이지입니다.        
+    </div>
+    <div data-role="page" id="page3">
+        <h1>SECTION</h1>
+        3페이지입니다.        
+        </div>
+    <div data-role="page" id="page4">
+        <h1>SECTION</h1>
+        4페이지입니다.        
+    </div>
+    <div data-role="page" id="page5">
+        <h1>SECTION</h1>
+        5페이지입니다.        
+    </div>
+</body>
+</html>
