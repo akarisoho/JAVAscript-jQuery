@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #wrap{ display: flex;  flex-direction: row;}
+    #wrap>div{  border: 3px dashed darkblue; flex-basis: 50%; }
+    #wrap>#first{ 
+        /*flex-basis: 50%;        진행방향으로 늘어남. 
+        상위요소의 flex-direction이 row일 경우 width
+        상위요소의 flex-direction이 column일 경우 height*/
+        /* flex-grow: 1;     flex-grow : 비례로 나눔*/
+        flex-shrink: 0;
+        /*  flex-shrink : 누가 더  여백을 많이 희생하겠냐 = 값이 클수록 많이희생됨*/
+*/
+    }
+    #wrap>#second{
+        /*flex-grow: 2;*/
+        flex-shrink: 1;
+    }
+    
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="first">item1 item1 item1 item1 item1 </div>
+        <div id="second">item2 item2 item2 item2 item2 </div>
+    </div>
+</body>
+</html>
