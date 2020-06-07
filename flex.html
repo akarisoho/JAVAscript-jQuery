@@ -1,47 +1,73 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FLEX</title>
     <style>
-    #wrap{ width: 100%; display: flex;  flex-direction: row; flex-wrap: wrap;}
-    /* flex-direction: row|row-reverse|column|column-reverse|initial|inherit; */
-    /* flex-wrap: wrap; => flex-basis에서 지정한 너비 그 이하로 줄지 않고 넘치는 요소들을 줄바꿈 */
-    #wrap>div{flex-basis: 200px; height: 200px; border: 3px dashed darkblue; flex-grow: 1; flex-shrink: 1; }
-    #wrap>.first{
-        /*-ms-flex: 1;  IE 10 */
-        /* flex-basis: 200px;  초기 길이 설정
-        상위요소의 flex-direction이 row일 경우 width값 작성
-        상위요소의 flex-direction이 column일 경우 height값 작성*/
-        flex-grow: 3;
-        /*flex-grow  : 확대 비율 지정, 값이 클수록 다른 요소들 보다 더 확대, flex-basis값이 있어야 함 */
-        /* flex-shrink: 0; */
-        
-    }
-    /* .first_01{display: block;} */
-    #wrap>.fourth{
-       /*  flex-shrink 축소 비율 지정, 값이 클수록 다른 박스보다 더 많이 축소됨. flex-basis값이 있어야 함*/
-        flex-shrink: 3;
-    }
-    section{ height: 500px; background: yellow;}
+        #wrap { width: 90%; background-color: #ccc; margin: 0 auto; }
+        div { min-height: 100px; border: 3px dashed darkblue;}
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            /* flex-direction: row|row-reverse|column|column-reverse|initial|inherit; */
+            flex-wrap: wrap;
+            /* flex-wrap: wrap; => flex-basis에서 지정한 너비 그 이하로 줄지 않고 넘치는 요소들을 줄바꿈 */
+        }
+
+        .container>div {
+            flex-basis: 200px;
+            /* flex-basis: 200px;  초기 길이 설정
+            상위   요소의 flex-direction이 row일 경우 width값 작성
+            상위요소의 flex-direction이 column일 경우 height값 작성*/
+            flex-grow: 1;
+            /*flex-grow  : 확대 비율 지정, 값이 클수록 다른 요소들 보다 더 확대, flex-basis값이 있어야 함 */
+            flex-shrink: 1;
+        }
+
+        .child_items {
+            background-color: pink;
+        }
+
+        .child_items>.first {
+            /*-ms-flex: 1;  IE 10 */
+            flex-grow: 3;
+        }
+
+        .child_items>.fourth {
+            /*  flex-shrink 축소 비율 지정, 값이 클수록 다른 박스보다 더 많이 축소됨. flex-basis값이 있어야 함*/
+            flex-shrink: 3;
+        }
     </style>
 </head>
 <!--  Internet Explorer 9 및 이전 버전은 flex 속성을 지원하지 않습니다. 
       Internet Explorer 10은 다른 -ms-flex 속성을 지원합니다. 
       IE11 및 최신 버전은 flex 속성을 완전히 지원합니다 (-ms- 접두사 필요 없음). -->
+
 <body>
     <div id="wrap">
-        <div class="first">
-           <!-- <span class="first_01">item1_01</span> 
+        <section class="container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </section>
+        <section class="child_items">
+            <div class="first">
+                <!-- <span class="first_01">item1_01</span> 
            <span class="first_01">item1_01</span>  -->
-        </div>
-        <div id="second"></div>
-        <div></div>
-        <div class="fourth"></div>
-        <div></div>
+            </div>
+            <div></div>
+            <div></div>
+            <div class="fourth"></div>
+            <div></div>
+        </section>
     </div>
-    <section></section>
+
 </body>
+
 </html>
