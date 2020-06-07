@@ -6,28 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FLEX</title>
     <style>
-    #wrap{ display: flex;  flex-direction: row;}
-    #wrap>div{  border: 3px dashed darkblue; flex-basis: 50%; }
-    #wrap>#first{ 
-        /*flex-basis: 50%;        진행방향으로 늘어남. 
-        상위요소의 flex-direction이 row일 경우 width
-        상위요소의 flex-direction이 column일 경우 height*/
-        /* flex-grow: 1;     flex-grow : 비례로 나눔*/
-        flex-shrink: 0;
-        /*  flex-shrink : 누가 더  여백을 많이 희생하겠냐 = 값이 클수록 많이희생됨*/
-*/
+    #wrap{ width: 100%; display: flex;  flex-direction: row;}
+    /* flex-direction: row|row-reverse|column|column-reverse|initial|inherit; */
+    #wrap>div{flex-basis: 200px; height: 200px; border: 3px dashed darkblue; flex-grow: 1; flex-shrink: 1; }
+    #wrap>.first{
+        /*-ms-flex: 1;  IE 10 */
+        /* flex-basis: 200px;  초기 길이 설정
+        상위요소의 flex-direction이 row일 경우 width값 작성
+        상위요소의 flex-direction이 column일 경우 height값 작성*/
+        flex-grow: 3;
+        /*flex-grow  : 확대 비율 지정, 값이 클수록 다른 요소들 보다 더 확대, flex-basis값이 있어야 함 */
+        /* flex-shrink: 0; */
+        
     }
-    #wrap>#second{
-        /*flex-grow: 2;*/
-        flex-shrink: 1;
+    /* .first_01{display: block;} */
+    #wrap>.fourth{
+       /*  flex-shrink 축소 비율 지정, 값이 클수록 다른 박스보다 더 많이 축소됨. flex-basis값이 있어야 함*/
+        flex-shrink: 3;
     }
-    
     </style>
 </head>
+<!--  Internet Explorer 9 및 이전 버전은 flex 속성을 지원하지 않습니다. 
+      Internet Explorer 10은 다른 -ms-flex 속성을 지원합니다. 
+      IE11 및 최신 버전은 flex 속성을 완전히 지원합니다 (-ms- 접두사 필요 없음). -->
 <body>
     <div id="wrap">
-        <div id="first">item1 item1 item1 item1 item1 </div>
-        <div id="second">item2 item2 item2 item2 item2 </div>
+        <div class="first">
+           <!-- <span class="first_01">item1_01</span> 
+           <span class="first_01">item1_01</span>  -->
+        </div>
+        <div id="second"></div>
+        <div></div>
+        <div class="fourth"></div>
+        <div></div>
     </div>
 </body>
 </html>
