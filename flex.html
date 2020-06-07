@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FLEX</title>
     <style>
-    #wrap{ width: 100%; display: flex;  flex-direction: row;}
+    #wrap{ width: 100%; display: flex;  flex-direction: row; flex-wrap: wrap;}
     /* flex-direction: row|row-reverse|column|column-reverse|initial|inherit; */
     #wrap>div{flex-basis: 200px; height: 200px; border: 3px dashed darkblue; flex-grow: 1; flex-shrink: 1; }
     #wrap>.first{
@@ -24,6 +24,7 @@
        /*  flex-shrink 축소 비율 지정, 값이 클수록 다른 박스보다 더 많이 축소됨. flex-basis값이 있어야 함*/
         flex-shrink: 3;
     }
+    section{ height: 500px; background: yellow;}
     </style>
 </head>
 <!--  Internet Explorer 9 및 이전 버전은 flex 속성을 지원하지 않습니다. 
@@ -40,5 +41,6 @@
         <div class="fourth"></div>
         <div></div>
     </div>
+    <section></section>
 </body>
 </html>
